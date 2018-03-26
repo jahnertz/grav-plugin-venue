@@ -29,9 +29,7 @@ form:
       validate:
         type: bool
     program_page:
-      type: text
+      type: pages
       label: Program listing
       default: '/program'
-      size: small
-      validate:
-          type: path
+      size: medium

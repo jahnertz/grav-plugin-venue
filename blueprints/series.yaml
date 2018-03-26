@@ -1,0 +1,48 @@
+title: Series
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  feilds:
+    tabs:
+
+      fields:
+        series:
+          type: tabs
+          title: Event Series
+
+          fields:
+
+            header.events:
+              name: events
+              type: list
+              style: vertical
+              label: events
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .subtitle:
+                  type: text
+                  label: Subtitle
+                .venue:
+                  type: toggle
+                  default: 0
+                  options:
+                    0: '20:20'
+                    1: 'XXXX'
+                .date:
+                  type: datetime
+                  label: Date
+                  toggleable: true
+                .image:
+                  type: file
+                  label: Poster
+                  multiple: false
+                  destination: 'self@'
+                  random_name: false
+                  avoid_overwriting: false
+                  limit: 10
+                  accept:
+                    - image/*

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,aAAc;EAIV,gBAAgB,EAAC,IAAI;EACrB,cAAc,EAAC,IAAI;EAJnB,gBAAG;IACC,OAAO,EAAE,KAAK",
+"mappings": "AACI,gBAAG;EACC,OAAO,EAAE,KAAK",
 "sources": ["../scss/venue.scss"],
 "names": [],
 "file": "venue.css"
