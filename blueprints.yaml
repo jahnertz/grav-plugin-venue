@@ -1,0 +1,30 @@
+name: Venue
+version: 0.0.1
+description: "This plugin provides several functions for sites for venues and event spaces."
+icon: beer
+author:
+  name: Jordan Han
+  email: info@jhanrahan.com.au
+  url: https://jhanrahan.com.au
+homepage: https://github.com/jahnertz/grav-plugin-venue
+demo: http://learn.getgrav.org
+keywords: ui, plugin, tabs
+bugs: https://github.com/jahnertz/grav-plugin-venue/issues
+license: MIT
+
+dependencies:
+  - shortcode-core
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin Enabled
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
