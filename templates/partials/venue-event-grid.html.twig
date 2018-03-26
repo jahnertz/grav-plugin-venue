@@ -1,8 +1,8 @@
-<div class="event-grid">
-    {% set collection = page.collection() %}
-    <div class="grid pure-g">
-        <div class="block size-2-3 pure-u-2-3">
-            {% include 'partials/venue-event-item.html.twig' with {'blog':page, 'page':collection.first(), 'truncate':true, 'grid_only':true} %}
-        </div>
-    </div>
+{% set collection = page.collection %}
+<div class="event-grid grid pure-g">
+    <ul>
+        {% for item in collection %}
+        <li><h5>Event</h5> {% include 'partials/venue-event-grid-item.html.twig' with {'collection':collection.first()} %}</li>
+    </ul>
+    {% endfor %}
 </div>

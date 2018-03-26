@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    {{ page.content }}
+    <ul class='event-grid grid pure-g'>
+        {% for event in page.header.program %}
+            <li class='pure-u-1 pure-u-md-1-3'>
+                {{ page.media[event.image].lightbox.html }}
+                <h4>{{ event.title }}</h4>
+                {% if event.subtitle is defined %}
+                <h6>{{ event.subtitle }}</h6>
+                {% endif %}
+                <h5>{{ event.date|date("D F jS, Y") }}<br>{{ event.time|date("g:ia") }}</h5>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -12,10 +12,16 @@ class VenuePlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
+            'onAssetsInitialized' => ['onAssetsInitialized', 0],
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
             'onTwigExtensions' => ['onTwigExtensions', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
         ];
+    }
+
+    public function onassetsinitialized()
+    {
+        $this->grav['assets']->addCss( 'user/plugins/venue/css-compiled/venue.css');
     }
 
     /**
@@ -39,4 +45,5 @@ class VenuePlugin extends Plugin
     {
         $this->grav['shortcode']->registerallshortcodes(__dir__.'/shortcodes');
     }
+
 }
