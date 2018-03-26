@@ -23,12 +23,12 @@ class VenuePlugin extends Plugin
      */
     public function ontwigtemplatepaths()
     {
-        $this->grav['twig']->twig_paths[] = __dir__ . '/templates';
+        $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
 
     public function ontwigextensions()
     {
-        require_once(__dir__ . '/twig/venuetwigextension.php');
+        require_once(__DIR__ . '/twig/venuetwigextension.php');
         $this->grav['twig']->twig->addextension(new shortcodeuitwigextension());
     }
 
