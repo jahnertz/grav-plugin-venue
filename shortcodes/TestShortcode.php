@@ -1,13 +1,16 @@
 <?php
 namespace Grav\Plugin\Shortcodes;
 
-class TestShortcode extends Shortcode {
-    public function init() {
+use Thunder\Shortcode\Shortcode\ShortcodeInterface;
+
+class TestShortcode extends Shortcode 
+{
+    public function init() 
+    {
         $this->shortcode->getHandlers()->add('test-shortcode', function(ShortcodeInterface $sc) {
-            //add assets
+            //add assets etc
             $output = 'this is a shortcode';
             return $output;
         });
     }
 }
-?>

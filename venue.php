@@ -28,7 +28,7 @@ class VenuePlugin extends Plugin
 
     public function ontwigextensions()
     {
-        require_once(__DIR__ . '/twig/venuetwigextension.php');
+        require_once(__DIR__ . '/twig/VenueTwigExtension.php');
         $this->grav['twig']->twig->addextension(new shortcodeuitwigextension());
     }
 
