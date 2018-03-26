@@ -16,7 +16,7 @@ dependencies:
   - shortcode-core
 
 form:
-  validation: strict
+  validation: loose
   fields:
     enabled:
       type: toggle
@@ -28,3 +28,10 @@ form:
         0: Disabled
       validate:
         type: bool
+    program_page:
+      type: text
+      label: Program listing
+      default: '/program'
+      size: small
+      validate:
+          type: path

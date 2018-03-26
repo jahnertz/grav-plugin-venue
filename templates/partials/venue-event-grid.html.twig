@@ -1,8 +1,8 @@
-{% set collection = page.collection %}
-<div class="event-grid grid pure-g">
-    <ul>
+{% set collection = page.evaluate([{'@page.children' : '/program'}]) %}
+<ul class="event-grid grid pure-g">
         {% for item in collection %}
-        <li><h5>Event</h5> {% include 'partials/venue-event-grid-item.html.twig' with {'collection':collection.first()} %}</li>
-    </ul>
+            <li><h5>Event</h5> 
+                {#% include 'partials/venue-event-grid-item.html.twig' with {'collection':collection.first()} %#}
+            </li>
     {% endfor %}
-</div>
+</ul>
