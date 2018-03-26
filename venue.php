@@ -12,31 +12,31 @@ class VenuePlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onShortcodeHandlers' => ['onShortcodeHandlers', 0]
-            // 'onTwigExtensions' => ['onTwigExtensions', 0],
-            // 'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
+            'onTwigExtensions' => ['onTwigExtensions', 0],
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
         ];
     }
 
     /**
-     * Add current directory to twig lookup paths.
+     * add current directory to twig lookup paths.
      */
-    // public function onTwigTemplatePaths()
-    // {
-    //     $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
-    // }
+    public function ontwigtemplatepaths()
+    {
+        $this->grav['twig']->twig_paths[] = __dir__ . '/templates';
+    }
 
-    // public function onTwigExtensions()
-    // {
-    //     require_once(__DIR__ . '/twig/VenueTwigExtension.php');
-    //     $this->grav['twig']->twig->addExtension(new ShortcodeUiTwigExtension());
-    // }
+    public function ontwigextensions()
+    {
+        require_once(__dir__ . '/twig/venuetwigextension.php');
+        $this->grav['twig']->twig->addextension(new shortcodeuitwigextension());
+    }
 
     /**
-     * Initialize configuration
+     * initialize configuration
      */
-    public function onShortcodeHandlers()
+    public function onshortcodehandlers()
     {
-        $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/shortcodes');
+        $this->grav['shortcode']->registerallshortcodes(__dir__.'/shortcodes');
     }
 }
