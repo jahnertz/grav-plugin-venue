@@ -13,8 +13,8 @@ class VenuePlugin extends Plugin
     {
         return [
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
-            'onGetPageTemplates' => ['onGetPageTemplates', 0],
-            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            // 'onGetPageTemplates' => ['onGetPageTemplates', 0],
+            // 'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
             'onAssetsInitialized' => ['onAssetsInitialized', 0],
             'onTwigExtensions' => ['onTwigExtensions', 0],
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
