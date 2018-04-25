@@ -1,10 +1,10 @@
-title: Series
+title: Venue-Program
 '@extends':
     type: default
     context: blueprints://pages
 
 form:
-  feilds:
+  fields:
     tabs:
 
       fields:
