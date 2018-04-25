@@ -7,6 +7,12 @@
 {% set title = 'Venue - Events' %}
 
 {% block titlebar %}
+    <div class="button-bar">
+        <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> Back </a>
+        {% if data.file.filename %}
+        <button class="button" type="submit" name="task" value="save" form="blueprints"><i class="fa fa-check"></i> Save</button>
+        {% endif %}
+    </div>
     <h1><i class="fa fa-fw fa-music"></i> {{ title }}</h1>
 {% endblock %}
 
