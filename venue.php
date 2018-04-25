@@ -45,12 +45,13 @@ class VenuePlugin extends Plugin
             $this->enable([
                 'onGetPageTemplates' => ['onGetPageTemplates', 0],
                 'onAdminMenu' => ['onAdminMenu', 0],
+                'onTwigTemplatePaths' => ['addAdminTwigTemplatePaths', 1],
             ]);
             return;
         }
         // If not in an Admin page.
         $this->enable([
-            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 1],
+            'onTwigTemplatePaths' => ['addTwigTemplatePaths', 1],
         ]);
     }
 
@@ -68,9 +69,13 @@ class VenuePlugin extends Plugin
     /**
      * Add templates directory to twig lookup paths.
      */
-    public function onTwigTemplatePaths()
+    public function addTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+    }
+    public function addAdminTwigTemplatePaths()
+    {
+        $this->grav['twig']->twig_paths[] = __DIR__ . '/admin/templates';
     }
 
     /**
