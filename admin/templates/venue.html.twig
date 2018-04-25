@@ -10,15 +10,6 @@
     <h1><i class="fa fa-fw fa-music"></i> {{ title }}</h1>
 {% endblock %}
 
-{% block content_top %}
-
-    <div class="form-tabs">
-        <div class="tabs-nav">
-        </div>
-    </div>
-
-{% endblock %}
-
 {% block content %}
 	<h4>TODO: Add plugin interface</h4>
     {% include 'partials/blueprints.html.twig' with { blueprints: context.blueprints, data: context } %}
