@@ -12,24 +12,52 @@ class VenuePlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onAssetsInitialized' => ['onAssetsInitialized', 0],
+            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onGetPageTemplates' => ['onGetPageTemplates', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            'onAssetsInitialized' => ['onAssetsInitialized', 0],
             'onTwigExtensions' => ['onTwigExtensions', 0],
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
         ];
     }
 
-    public function onAssetsInitialized()
+    public function onPluginsInitialized()
     {
-        $this->grav['assets']->addCss( 'user/plugins/venue/css-compiled/venue.css');
+        // If in an Admin page.
+        if ($this->isAdmin()) {
+            $this->enable([
+                'onGetPageTemplates' => ['onGetPageTemplates', 0],
+            ]);
+            return;
+        }
+        // If not in an Admin page.
+        $this->enable([
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 1],
+        ]);
     }
 
     /**
-     * add current directory to twig lookup paths.
+     * Add blueprint directory to page templates.
+     */
+    public function onGetPageTemplates(Event $event)
+    {
+        $types = $event->types;
+        $locator = Grav::instance()['locator'];
+        $types->scanBlueprints($locator->findResource('plugin://' . $this->name . '/blueprints'));
+        $types->scanTemplates($locator->findResource('plugin://' . $this->name . '/templates'));
+    }
+ 
+    /**
+     * Add templates directory to twig lookup paths.
      */
     public function onTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+    }
+
+    public function onAssetsInitialized()
+    {
+        $this->grav['assets']->addCss( 'user/plugins/venue/css-compiled/venue.css');
     }
 
     public function onTwigExtensions()

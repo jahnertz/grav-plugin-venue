@@ -1,4 +1,4 @@
-title: Venue-Program
+title: Venue Program
 '@extends':
     type: default
     context: blueprints://pages
@@ -6,14 +6,14 @@ title: Venue-Program
 form:
   fields:
     tabs:
-
+      type: tabs
+      active: 1
       fields:
         series:
           type: tab
           title: Event Series
 
           fields:
-
             header.events:
               name: events
               type: list
