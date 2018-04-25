@@ -1,7 +1,7 @@
 name: Venue
-version: 0.0.1
+version: 0.0.2
 description: "This plugin provides several functions for sites for venues and event spaces."
-icon: beer
+icon: music
 author:
   name: Jordan Han
   email: info@jhanrahan.com.au

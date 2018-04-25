@@ -83,7 +83,7 @@ class VenuePlugin extends Plugin
      */
     public function onAdminMenu()
     {
-        $this->grav['twig']->plugins_hooked_nav['Backup'] = ['route' => $this->route, 'icon' => ' fa-glass-martini'];
+        $this->grav['twig']->plugins_hooked_nav['Backup'] = ['route' => $this->route, 'icon' => ' fa-music'];
     }
 
     public function onAssetsInitialized()
