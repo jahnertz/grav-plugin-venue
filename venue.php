@@ -33,7 +33,6 @@ class VenuePlugin extends Plugin
         return [
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
             'onAssetsInitialized' => ['onAssetsInitialized', 0],
-            'onTwigExtensions' => ['onTwigExtensions', 0],
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
         ];
     }
@@ -83,18 +82,12 @@ class VenuePlugin extends Plugin
      */
     public function onAdminMenu()
     {
-        $this->grav['twig']->plugins_hooked_nav['Events'] = ['route' => $this->route, 'icon' => ' fa-music'];
+        $this->grav['twig']->plugins_hooked_nav['   Events'] = ['route' => $this->route, 'icon' => ' fa-music'];
     }
 
     public function onAssetsInitialized()
     {
         $this->grav['assets']->addCss( 'user/plugins/venue/css-compiled/venue.css');
-    }
-
-    public function onTwigExtensions()
-    {
-        require_once(__DIR__ . '/twig/VenueTwigExtension.php');
-        $this->grav['twig']->twig->addextension(new shortcodeuitwigextension());
     }
 
     /**
