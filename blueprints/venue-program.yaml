@@ -11,7 +11,7 @@ form:
       fields:
         series:
           type: tab
-          title: Event Series
+          title: Program
 
           fields:
             header.events:
