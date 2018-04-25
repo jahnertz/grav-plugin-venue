@@ -5,15 +5,17 @@ title: Venue Program
 
 form:
   fields:
+    
     tabs:
       type: tabs
       active: 1
       fields:
-        series:
+
+        program:
           type: tab
           title: Program
-
           fields:
+
             header.events:
               name: events
               type: list
