@@ -1,5 +1,22 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block content %}
-	{{ page.content }}
+{% set tools_slug = uri.basename|e %}
+{% if tools_slug == 'tools' %}{% set tools_slug = 'direct-install' %}{% endif %}
+{% set title = 'Venue' %}
+
+{% block titlebar %}
+    <h1><i class="fa fa-fw fa-music"></i> Venue</h1>
 {% endblock %}
+
+{% block content_top %}
+
+    <div class="form-tabs">
+        <div class="tabs-nav">
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
