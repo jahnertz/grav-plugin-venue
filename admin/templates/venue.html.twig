@@ -1,4 +1,8 @@
 {% extends 'partials/base.html.twig' %}
+
+{% set blueprints = theme.blueprints() %}
+{% set context = admin.page(true) %}
+
 {% set title = 'Venue - Events' %}
 
 {% block titlebar %}
@@ -16,5 +20,6 @@
 
 {% block content %}
 	<h4>TODO: Add plugin interface</h4>
+    {% include 'partials/blueprints.html.twig' with { blueprints: context.blueprints, data: context } %}
 {% endblock %}
 
