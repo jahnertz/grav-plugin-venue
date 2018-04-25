@@ -5,7 +5,7 @@ title: Venue Program
 
 form:
   fields:
-    
+
     tabs:
       type: tabs
       active: 1
@@ -15,7 +15,9 @@ form:
           type: tab
           title: Program
           fields:
-
+            
+            #TODO: add event series' list
+            #Event list:
             header.events:
               name: events
               type: list
