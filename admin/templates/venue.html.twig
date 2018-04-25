@@ -11,7 +11,10 @@
 {% endblock %}
 
 {% block content %}
-	<h4>TODO: Add plugin interface</h4>
-    {% include 'partials/blueprints.html.twig' with { blueprints: context.blueprints, data: context } %}
+<div class="clear admin-pages">
+	<div class="admin-form-wrapper">
+		{% include 'partials/blueprints.html.twig' with { blueprints: context.blueprints, data: context } %}
+	</div>
+</div>
 {% endblock %}
 
