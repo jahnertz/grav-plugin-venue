@@ -8,9 +8,26 @@ use RocketTheme\Toolbox\Event\Event;
 
 class VenuePlugin extends Plugin
 {
+    protected $route = "venue";
+
+    /**
+    * @var Uri
+    */
+    protected $uri;
+
+    /**
+    * @var Base
+    */
+    protected $base;
+
+    /**
+    * @var Admin_Route
+    */
+    protected $admin_route;
     /**
      * @return array
      */
+    
     public static function getSubscribedEvents()
     {
         return [
@@ -27,6 +44,7 @@ class VenuePlugin extends Plugin
         if ($this->isAdmin()) {
             $this->enable([
                 'onGetPageTemplates' => ['onGetPageTemplates', 0],
+                'onAdminMenu' => ['onAdminMenu', 0],
             ]);
             return;
         }
@@ -53,6 +71,14 @@ class VenuePlugin extends Plugin
     public function onTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+    }
+
+    /**
+     * Add navigation item to the admin plugin
+     */
+    public function onAdminMenu()
+    {
+        $this->grav['twig']->plugins_hooked_nav['Backup'] = ['route' => $this->route, 'icon' => ' fa-glass-martini'];
     }
 
     public function onAssetsInitialized()
