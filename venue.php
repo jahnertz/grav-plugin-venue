@@ -2,6 +2,7 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
+use RocketTheme\Toolbox\Event\Event;
 
 
 class VenuePlugin extends Plugin
