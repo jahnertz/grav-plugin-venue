@@ -9,7 +9,7 @@ form:
 
       fields:
         series:
-          type: tabs
+          type: tab
           title: Event Series
 
           fields:
@@ -18,7 +18,7 @@ form:
               name: events
               type: list
               style: vertical
-              label: events
+              label: Events
               fields:
                 .title:
                   type: text
