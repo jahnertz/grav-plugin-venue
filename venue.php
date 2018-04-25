@@ -13,9 +13,9 @@ class VenuePlugin extends Plugin
     {
         return [
             'onAssetsInitialized' => ['onAssetsInitialized', 0],
-            'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
-            'onTwigExtensions' => ['onTwigExtensions', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            'onTwigExtensions' => ['onTwigExtensions', 0],
+            'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
         ];
     }
 
