@@ -19,7 +19,7 @@ class VenuePlugin extends Plugin
         ];
     }
 
-    public function onassetsinitialized()
+    public function onAssetsInitialized()
     {
         $this->grav['assets']->addCss( 'user/plugins/venue/css-compiled/venue.css');
     }
@@ -27,12 +27,12 @@ class VenuePlugin extends Plugin
     /**
      * add current directory to twig lookup paths.
      */
-    public function ontwigtemplatepaths()
+    public function onTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
 
-    public function ontwigextensions()
+    public function onTwigExtensions()
     {
         require_once(__DIR__ . '/twig/VenueTwigExtension.php');
         $this->grav['twig']->twig->addextension(new shortcodeuitwigextension());
@@ -41,7 +41,7 @@ class VenuePlugin extends Plugin
     /**
      * initialize configuration
      */
-    public function onshortcodehandlers()
+    public function onShortcodeHandlers()
     {
         $this->grav['shortcode']->registerallshortcodes(__dir__.'/shortcodes');
     }
